@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; script-src 'self' 'sha256-WZRJfWvsnNCPcxzZwvyhovnZGqhZaC+8gPGPRbx6wTk='; style-src 'self'; img-src 'self'; font-src 'self'; base-uri 'self'; form-action 'none'"
+    />
+    <title>Hedgerow — small, self-hosted apps that live together</title>
+    <meta
+      name="description"
+      content="Hedgerow is a small family of apps you run on your own machines: Vigilant Vole for uptime monitoring, Nimble Newt for editing text and Keen Kestrel for error tracking and analytics. Rust, SQLite, no trackers, MIT licensed."
+    />
+    <script>document.documentElement.classList.add("js");</script>
+    <link rel="canonical" href="https://ferdinand99.github.io/" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="favicon.png" type="image/png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#0b0b0d" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ferdinand99.github.io/" />
+    <meta property="og:site_name" content="Hedgerow" />
+    <meta property="og:title" content="Hedgerow — small, self-hosted apps that live together" />
+    <meta
+      property="og:description"
+      content="Vigilant Vole, Nimble Newt and Keen Kestrel: small apps for your own machines, built in Rust, with no trackers."
+    />
+    <meta property="og:image" content="https://ferdinand99.github.io/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="The Hedgerow mark, a sprig with three berries in violet, lime and amber, next to the tagline “Small, self-hosted apps that live together” and the icons of Vigilant Vole, Nimble Newt and Keen Kestrel." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Hedgerow — small, self-hosted apps that live together" />
+    <meta
+      name="twitter:description"
+      content="Vigilant Vole, Nimble Newt and Keen Kestrel: small apps for your own machines, built in Rust, with no trackers."
+    />
+    <meta name="twitter:image" content="https://ferdinand99.github.io/og-image.png" />
+    <link rel="preload" href="fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Hedgerow",
+        "url": "https://ferdinand99.github.io/",
+        "description": "A small family of self-hosted services and native tools: Vigilant Vole, Nimble Newt and Keen Kestrel.",
+        "image": "https://ferdinand99.github.io/og-image.png",
+        "author": { "@type": "Person", "name": "Ferdinand99", "url": "https://github.com/Ferdinand99" }
+      }
+    </script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <svg width="0" height="0" class="vh" aria-hidden="true" focusable="false">
+      <symbol id="gh" viewBox="0 0 16 16">
+        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+      </symbol>
+    </svg>
+
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="topbar" id="top">
+      <div class="wrap topbar-inner">
+        <a class="brand" href="#top">
+          <img src="favicon.svg" alt="" width="28" height="28" />
+          <span>Hedgerow</span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="topnav" hidden>
+          <span></span><span></span>
+        </button>
+
+        <nav class="topnav" id="topnav" aria-label="Main">
+          <a class="topnav-link" href="#apps">Apps</a>
+          <a class="topnav-link" href="#principles">Principles</a>
+          <a class="topnav-link" href="#together">Together</a>
+          <a class="topnav-link" href="#also">Also by me</a>
+          <a class="btn btn-ghost btn-sm" href="https://github.com/Ferdinand99" aria-label="Ferdinand99 on GitHub">
+            <svg class="gh-mark" aria-hidden="true"><use href="#gh"></use></svg>
+            <span>GitHub</span>
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- Hero ============================================================ -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="wrap">
+          <div class="hero-copy">
+            <div class="hero-icon">
+              <img src="favicon.svg" width="96" height="96" alt="" />
+            </div>
+            <h1 id="hero-title">
+              <span class="kicker">Hedgerow</span>
+              <span class="display">Small, <span class="nw">self-hosted</span> apps<br class="br-wide" /> that live together.</span>
+            </h1>
+            <p class="lead">
+              A small family of apps you run on your own machines: self-hosted services for your
+              server and fast native tools for your desktop. Each is named after an animal of the
+              hedge, and they share one design, the same principles and, more and more, the same
+              foundation.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary btn-lg" href="#apps">Meet the family</a>
+              <a class="btn btn-ghost btn-lg" href="https://github.com/Ferdinand99">
+                <svg class="gh-mark" aria-hidden="true"><use href="#gh"></use></svg>
+                <span>Ferdinand99 on GitHub</span>
+              </a>
+            </div>
+            <p class="hero-meta"><span>Built in Rust</span><span>MIT licensed</span><span>No trackers</span></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- The family ======================================================= -->
+      <section class="section" id="apps" aria-labelledby="apps-title">
+        <div class="wrap">
+          <header class="section-head center reveal">
+            <p class="eyebrow">The family</p>
+            <h2 class="headline" id="apps-title">Three animals, one hedge.</h2>
+            <p class="sub">
+              A hedgerow is a living fence of shrubs and trees, and home to a crowd of animals. The
+              vole lives at its foot, the kestrel hunts along it and the newt hides in its damp
+              corners. Each Hedgerow app is one of them, with a job of its own.
+            </p>
+          </header>
+
+          <ul class="apps">
+            <li class="card app app-vole reveal">
+              <div class="app-head">
+                <img class="app-icon" src="assets/apps/vigilant-vole.svg" width="56" height="56" alt="" />
+                <span class="pill status-up"><span class="dot"></span>Released</span>
+              </div>
+              <h3 class="app-name">Vigilant Vole</h3>
+              <p class="app-kind">Uptime monitoring</p>
+              <p class="app-pitch">
+                A lightweight, self-hosted uptime monitor in the spirit of Uptime Kuma: 30 monitor
+                types, status pages, smart alerts to 40 notification providers, and remote agents
+                that can confirm an outage before you are alerted.
+              </p>
+              <p class="app-runs"><span class="app-runs-label">Runs on</span> Docker · Unraid · Proxmox · Linux</p>
+              <div class="app-links">
+                <a class="btn btn-sm" href="https://ferdinand99.github.io/Vigilant-Vole/">Website<span class="vh"> of Vigilant Vole</span></a>
+                <a class="btn btn-ghost btn-sm" href="https://github.com/Ferdinand99/Vigilant-Vole">
+                  <svg class="gh-mark" aria-hidden="true"><use href="#gh"></use></svg>
+                  <span>GitHub<span class="vh">: Vigilant Vole</span></span>
+                </a>
+              </div>
+            </li>
+
+            <li class="card app app-newt reveal d1">
+              <div class="app-head">
+                <img class="app-icon" src="assets/apps/nimble-newt.svg" width="56" height="56" alt="" />
+                <span class="pill status-up"><span class="dot"></span>Released</span>
+              </div>
+              <h3 class="app-name">Nimble Newt</h3>
+              <p class="app-kind">Text editor</p>
+              <p class="app-pitch">
+                A fast, modern text editor with the simplicity of Notepad++ in a small native app.
+                Tabs that survive a restart, find in files, multiple cursors, macros, and files over
+                256 MB opened in an instant for reading.
+              </p>
+              <p class="app-runs"><span class="app-runs-label">Runs on</span> Windows · macOS</p>
+              <div class="app-links">
+                <a class="btn btn-sm" href="https://ferdinand99.github.io/Nimble-Newt/">Website<span class="vh"> of Nimble Newt</span></a>
+                <a class="btn btn-ghost btn-sm" href="https://github.com/Ferdinand99/Nimble-Newt">
+                  <svg class="gh-mark" aria-hidden="true"><use href="#gh"></use></svg>
+                  <span>GitHub<span class="vh">: Nimble Newt</span></span>
+                </a>
+              </div>
+            </li>
+
+            <li class="card app app-kestrel reveal d2">
+              <div class="app-head">
+                <img class="app-icon" src="assets/apps/keen-kestrel.svg" width="56" height="56" alt="" />
+                <span class="pill status-warning"><span class="dot"></span>In development</span>
+              </div>
+              <h3 class="app-name">Keen Kestrel</h3>
+              <p class="app-kind">Error tracking and analytics</p>
+              <p class="app-pitch">
+                Self-hosted error tracking that works with the official Sentry SDKs, and analytics
+                for your apps and sites without cookies or stored IP addresses. Nothing to install
+                yet; follow along on GitHub.
+              </p>
+              <p class="app-runs"><span class="app-runs-label">Will run on</span> Docker · Unraid · Proxmox · Linux</p>
+              <div class="app-links">
+                <a class="btn btn-sm" href="https://ferdinand99.github.io/Keen-Kestrel/">Website<span class="vh"> of Keen Kestrel</span></a>
+                <a class="btn btn-ghost btn-sm" href="https://github.com/Ferdinand99/Keen-Kestrel">
+                  <svg class="gh-mark" aria-hidden="true"><use href="#gh"></use></svg>
+                  <span>GitHub<span class="vh">: Keen Kestrel</span></span>
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Principles ======================================================= -->
+      <section class="section section-alt" id="principles" aria-labelledby="principles-title">
+        <div class="wrap">
+          <header class="section-head reveal">
+            <p class="eyebrow">Principles</p>
+            <h2 class="headline" id="principles-title">What they share.</h2>
+            <p class="sub">
+              Different jobs, the same habits. Whichever animal you pick, this is what you can
+              expect from it.
+            </p>
+          </header>
+
+          <ul class="grid grid-4">
+            <li class="card feature reveal">
+              <span class="list-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#server"></use></svg></span>
+              <h3>On your own machines</h3>
+              <p>Services on your own server, tools on your own computer. No account, no cloud in between, and your data stays where you put it.</p>
+            </li>
+            <li class="card feature reveal d1">
+              <span class="list-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#bolt"></use></svg></span>
+              <h3>Small, in Rust</h3>
+              <p>One Rust binary per service and a small native app on the desktop. Quick to start and light on memory.</p>
+            </li>
+            <li class="card feature reveal d2">
+              <span class="list-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#archive"></use></svg></span>
+              <h3>SQLite, nothing else</h3>
+              <p>The services keep their data in SQLite. No Postgres, Redis or queue to look after, and one folder to back up.</p>
+            </li>
+            <li class="card feature reveal d3">
+              <span class="list-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#eye-off"></use></svg></span>
+              <h3>Privacy first</h3>
+              <p>No ads and no trackers. Where an app counts visitors, it does so without cookies, and their sites make no requests to anyone else.</p>
+            </li>
+            <li class="card feature reveal">
+              <span class="list-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#sliders"></use></svg></span>
+              <h3>One design</h3>
+              <p>An Apple-inspired design system shared across the family: dark and light themes, Inter, keyboard and screen reader support, AA contrast.</p>
+            </li>
+            <li class="card feature reveal d1">
+              <span class="list-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#globe"></use></svg></span>
+              <h3>26 languages</h3>
+              <p>The same 26 interface languages, right-to-left included, so a term means the same thing in every app.</p>
+            </li>
+            <li class="card feature reveal d2">
+              <span class="list-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#download"></use></svg></span>
+              <h3>Easy to install</h3>
+              <p>Docker, Unraid, Proxmox and plain Linux for the services; installers for Windows and macOS for the editor.</p>
+            </li>
+            <li class="card feature reveal d3">
+              <span class="list-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#code"></use></svg></span>
+              <h3>MIT licensed</h3>
+              <p>Open source under the MIT license. No paid tier, nothing held back.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Together ========================================================= -->
+      <section class="section" id="together" aria-labelledby="together-title">
+        <div class="wrap">
+          <header class="section-head reveal">
+            <p class="eyebrow">Together</p>
+            <h2 class="headline" id="together-title">How they work together.</h2>
+            <p class="sub">
+              A family should be more than a shared colour scheme. Here is what’s true today, and
+              what’s being built.
+            </p>
+          </header>
+
+          <ul class="links">
+            <li class="card link-card reveal">
+              <div class="link-head">
+                <span class="list-icon status-up"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#sliders"></use></svg></span>
+                <span class="pill status-up"><span class="dot"></span>Today</span>
+              </div>
+              <h3 class="title">One design system</h3>
+              <p>
+                The same tokens, components, icons and typeface, written down once in Vigilant Vole’s
+                <a href="https://github.com/Ferdinand99/Vigilant-Vole/blob/main/docs/design-system.md">design system</a>.
+                Learn one app and the next feels familiar. Keen Kestrel’s interface will be built on it.
+              </p>
+            </li>
+            <li class="card link-card is-now reveal d1">
+              <div class="link-head">
+                <span class="list-icon status-accent"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#box"></use></svg></span>
+                <span class="pill status-accent"><span class="dot is-live"></span>Being built now</span>
+              </div>
+              <h3 class="title">A shared foundation, <span class="mono nw">vole-kit</span></h3>
+              <p>
+                Vigilant Vole and Keen Kestrel share one Rust crate, carved out of Vigilant Vole:
+                sign-in and two-factor, users and API tokens, settings, translations, the database
+                plumbing, security headers and the design system. Vigilant Vole works the same while
+                it moves.
+              </p>
+            </li>
+            <li class="card link-card reveal d2">
+              <div class="link-head">
+                <span class="list-icon status-none"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#bell"></use></svg></span>
+                <span class="pill"><span class="dot"></span>Planned</span>
+              </div>
+              <h3 class="title">The same alert channels</h3>
+              <p>
+                Keen Kestrel will send its alerts through the same notification providers as
+                Vigilant Vole, about 40 of them, from Discord and Slack to ntfy, email and webhooks,
+                set up the same way in both.
+              </p>
+            </li>
+          </ul>
+
+          <div class="diagram reveal" role="img" aria-label="Diagram: Vigilant Vole and Keen Kestrel both build on vole-kit, which is being built now. Nimble Newt shares the design system and the principles.">
+            <div class="node node-vole">
+              <img src="assets/apps/vigilant-vole.svg" width="32" height="32" alt="" />
+              <span>Vigilant Vole</span>
+            </div>
+            <div class="node node-kit">
+              <span class="mono">vole-kit</span>
+              <small>shared Rust crate</small>
+            </div>
+            <div class="node node-kestrel">
+              <img src="assets/apps/keen-kestrel.svg" width="32" height="32" alt="" />
+              <span>Keen Kestrel</span>
+            </div>
+          </div>
+          <p class="diagram-note reveal">
+            Nimble Newt is a desktop app, so it shares the design and the principles rather than the
+            server foundation.
+          </p>
+        </div>
+      </section>
+
+      <!-- Also by me ======================================================= -->
+      <section class="section section-alt" id="also" aria-labelledby="also-title">
+        <div class="wrap">
+          <header class="section-head reveal">
+            <h2 class="headline" id="also-title">Also by me.</h2>
+            <p class="sub">Projects outside the Hedgerow family, with names and homes of their own.</p>
+          </header>
+
+          <ul class="others">
+            <li class="card other reveal">
+              <picture>
+                <source type="image/webp" srcset="assets/apps/sylo.webp" />
+                <img class="other-icon" src="assets/apps/sylo.png" width="56" height="56" alt="" decoding="async" />
+              </picture>
+              <div class="other-body">
+                <h3 class="app-name">Sylo</h3>
+                <p class="other-kind">Discord and Fluxer bot</p>
+                <p>
+                  A multi-function Discord and Fluxer bot with a MEE6-style web dashboard. Add the
+                  hosted instance in one click, or self-host it with Docker or Unraid.
+                </p>
+                <p class="other-meta">MIT licensed · Node.js</p>
+                <div class="app-links">
+                  <a class="btn btn-sm" href="https://sylobot.com">Website<span class="vh"> of Sylo</span></a>
+                  <a class="btn btn-ghost btn-sm" href="https://docs.sylobot.com">Docs<span class="vh"> for Sylo</span></a>
+                  <a class="btn btn-ghost btn-sm" href="https://github.com/Ferdinand99/Sylo">
+                    <svg class="gh-mark" aria-hidden="true"><use href="#gh"></use></svg>
+                    <span>GitHub<span class="vh">: Sylo</span></span>
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="card other reveal d1">
+              <picture>
+                <source type="image/webp" srcset="assets/apps/subtrack.webp" />
+                <img class="other-icon" src="assets/apps/subtrack.png" width="56" height="56" alt="" decoding="async" />
+              </picture>
+              <div class="other-body">
+                <h3 class="app-name">Subtrack</h3>
+                <p class="other-kind">iPhone and iPad app</p>
+                <p>
+                  Keeps track of your subscriptions: what they cost per month and per year, when they
+                  renew, reminders before a renewal or a free trial ends, and what you’ve saved on the
+                  ones you cancelled. Syncs through your own private iCloud, with no tracking.
+                </p>
+                <p class="other-meta">Source-available, not open source · Norwegian interface · iOS 17+</p>
+                <div class="app-links">
+                  <a class="btn btn-ghost btn-sm" href="https://github.com/Opland-Tech-Nettverk/Subtrack">
+                    <svg class="gh-mark" aria-hidden="true"><use href="#gh"></use></svg>
+                    <span>GitHub<span class="vh">: Subtrack</span></span>
+                  </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <div class="footer-top">
+          <a class="brand" href="#top">
+            <img src="favicon.svg" alt="" width="24" height="24" loading="lazy" />
+            <span>Hedgerow</span>
+          </a>
+          <span>Made in Norway</span>
+        </div>
+        <nav aria-label="Family links">
+          <ul class="footer-links">
+            <li><a href="https://ferdinand99.github.io/Vigilant-Vole/">Vigilant Vole</a></li>
+            <li><a href="https://ferdinand99.github.io/Nimble-Newt/">Nimble Newt</a></li>
+            <li><a href="https://ferdinand99.github.io/Keen-Kestrel/">Keen Kestrel</a></li>
+            <li><a href="https://github.com/Ferdinand99">GitHub</a></li>
+            <li><a href="https://github.com/Ferdinand99/Ferdinand99.github.io/blob/main/LICENSE">MIT license</a></li>
+          </ul>
+        </nav>
+        <p>
+          The Hedgerow apps and this site are open source under the MIT license. This site uses no
+          cookies or analytics and makes no requests to other sites.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
