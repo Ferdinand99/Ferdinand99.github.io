@@ -10,25 +10,26 @@
 
 Hedgerow is the family name of a few small apps you run on your own machines: self-hosted services
 for your server and fast native tools for your desktop. A hedgerow is the habitat these animals
-share: the vole lives at its foot, the kestrel hunts along it and the newt hides in its damp
-corners. Each app is one of them, named *Adjective + Animal*.
+share: the vole lives at its foot, the kestrel hunts along it, the newt hides in its damp corners
+and the wren nests in its tangles. Each app is one of them, named *Adjective + Animal*.
 
 | App | What it does | Status | Links |
 |---|---|---|---|
 | **Vigilant Vole** | Self-hosted uptime monitoring, an Uptime Kuma alternative | Released | [Website](https://hedgerow.tools/Vigilant-Vole/) · [GitHub](https://github.com/Ferdinand99/Vigilant-Vole) |
 | **Nimble Newt** | Fast, modern text editor for Windows and macOS | Released | [Website](https://hedgerow.tools/Nimble-Newt/) · [GitHub](https://github.com/Ferdinand99/Nimble-Newt) |
-| **Keen Kestrel** | Self-hosted, Sentry-compatible error tracking and cookieless analytics | In development | [Website](https://hedgerow.tools/Keen-Kestrel/) · [GitHub](https://github.com/Ferdinand99/Keen-Kestrel) |
+| **Keen Kestrel** | Self-hosted, Sentry-compatible error tracking and cookieless analytics | Early release (v0.1) | [Website](https://hedgerow.tools/Keen-Kestrel/) · [GitHub](https://github.com/Ferdinand99/Keen-Kestrel) |
+| **Wise Wren** | Keeps Docker containers up to date without surprises: approve, snapshot, health check, rollback | In design | [Website](https://hedgerow.tools/Wise-Wren/) · [GitHub](https://github.com/Ferdinand99/Wise-Wren) |
 
 What they share: built in Rust, SQLite for the services, privacy first with no trackers, one
 Apple-inspired design system, 26 interface languages, easy installs on Docker, Unraid, Proxmox and
 Linux (or Windows and macOS for the editor), and the MIT license. Vigilant Vole and Keen Kestrel
-are moving onto a shared foundation crate, `vole-kit`.
+are moving onto a shared foundation crate, `vole-kit`, and Wise Wren will build on it too.
 
 ## This repository
 
 This is the GitHub user site for [@Ferdinand99](https://github.com/Ferdinand99), served at the root
 of `https://hedgerow.tools/`. The apps' own sites live in their repositories and are served
-under their paths (`/Vigilant-Vole/`, `/Nimble-Newt/`, `/Keen-Kestrel/`).
+under their paths (`/Vigilant-Vole/`, `/Nimble-Newt/`, `/Keen-Kestrel/`, `/Wise-Wren/`).
 
 - `site/` is the whole website: plain HTML, CSS and a small script, no build step. It uses the same
   design tokens and components as the app sites, a self-hosted Inter font, a strict Content

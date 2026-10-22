@@ -10,7 +10,7 @@
     <title>Hedgerow — small, self-hosted apps that live together</title>
     <meta
       name="description"
-      content="Hedgerow is a small family of apps you run on your own machines: Vigilant Vole for uptime monitoring, Nimble Newt for editing text and Keen Kestrel for error tracking and analytics. Rust, SQLite, no trackers, MIT licensed."
+      content="Hedgerow is a small family of apps you run on your own machines: Vigilant Vole for uptime monitoring, Nimble Newt for editing text, Keen Kestrel for error tracking and analytics, and Wise Wren for container updates. Rust, SQLite, no trackers, MIT licensed."
     />
     <script>document.documentElement.classList.add("js");</script>
     <link rel="canonical" href="https://hedgerow.tools/" />
@@ -26,18 +26,18 @@
     <meta property="og:title" content="Hedgerow — small, self-hosted apps that live together" />
     <meta
       property="og:description"
-      content="Vigilant Vole, Nimble Newt and Keen Kestrel: small apps for your own machines, built in Rust, with no trackers."
+      content="Vigilant Vole, Nimble Newt, Keen Kestrel and Wise Wren: small apps for your own machines, built in Rust, with no trackers."
     />
     <meta property="og:image" content="https://hedgerow.tools/og-image.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="The Hedgerow mark, a sprig with three berries in violet, lime and amber, next to the tagline “Small, self-hosted apps that live together” and the icons of Vigilant Vole, Nimble Newt and Keen Kestrel." />
+    <meta property="og:image:alt" content="The Hedgerow mark, a sprig with three berries in violet, lime and amber, next to the tagline “Small, self-hosted apps that live together” and the icons of Vigilant Vole, Nimble Newt, Keen Kestrel and Wise Wren." />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Hedgerow — small, self-hosted apps that live together" />
     <meta
       name="twitter:description"
-      content="Vigilant Vole, Nimble Newt and Keen Kestrel: small apps for your own machines, built in Rust, with no trackers."
+      content="Vigilant Vole, Nimble Newt, Keen Kestrel and Wise Wren: small apps for your own machines, built in Rust, with no trackers."
     />
     <meta name="twitter:image" content="https://hedgerow.tools/og-image.png" />
     <link rel="preload" href="fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin />
@@ -48,7 +48,7 @@
         "@type": "WebSite",
         "name": "Hedgerow",
         "url": "https://hedgerow.tools/",
-        "description": "A small family of self-hosted services and native tools: Vigilant Vole, Nimble Newt and Keen Kestrel.",
+        "description": "A small family of self-hosted services and native tools: Vigilant Vole, Nimble Newt, Keen Kestrel and Wise Wren.",
         "image": "https://hedgerow.tools/og-image.png",
         "author": { "@type": "Person", "name": "Ferdinand99", "url": "https://github.com/Ferdinand99" }
       }
@@ -123,11 +123,12 @@
         <div class="wrap">
           <header class="section-head center reveal">
             <p class="eyebrow">The family</p>
-            <h2 class="headline" id="apps-title">Three animals, one hedge.</h2>
+            <h2 class="headline" id="apps-title">Four animals, one hedge.</h2>
             <p class="sub">
               A hedgerow is a living fence of shrubs and trees, and home to a crowd of animals. The
-              vole lives at its foot, the kestrel hunts along it and the newt hides in its damp
-              corners. Each Hedgerow app is one of them, with a job of its own.
+              vole lives at its foot, the kestrel hunts along it, the newt hides in its damp corners
+              and the wren nests in its tangles. Each Hedgerow app is one of them, with a job of its
+              own.
             </p>
           </header>
 
@@ -179,21 +180,43 @@
             <li class="card app app-kestrel reveal d2">
               <div class="app-head">
                 <img class="app-icon" src="assets/apps/keen-kestrel.svg" width="56" height="56" alt="" />
-                <span class="pill status-warning"><span class="dot"></span>In development</span>
+                <span class="pill status-up"><span class="dot"></span>Early release</span>
               </div>
               <h3 class="app-name">Keen Kestrel</h3>
               <p class="app-kind">Error tracking and analytics</p>
               <p class="app-pitch">
                 Self-hosted error tracking that works with the official Sentry SDKs, and analytics
-                for your apps and sites without cookies or stored IP addresses. Nothing to install
-                yet; follow along on GitHub.
+                for your apps and sites without cookies or stored IP addresses. Error tracking is out
+                as v0.1, a Docker image; analytics come in v0.2.
               </p>
-              <p class="app-runs"><span class="app-runs-label">Will run on</span> Docker · Unraid · Proxmox · Linux</p>
+              <p class="app-runs"><span class="app-runs-label">Runs on</span> Docker today · Unraid, Proxmox and Linux planned</p>
               <div class="app-links">
                 <a class="btn btn-sm" href="https://hedgerow.tools/Keen-Kestrel/">Website<span class="vh"> of Keen Kestrel</span></a>
                 <a class="btn btn-ghost btn-sm" href="https://github.com/Ferdinand99/Keen-Kestrel">
                   <svg class="gh-mark" aria-hidden="true"><use href="#gh"></use></svg>
                   <span>GitHub<span class="vh">: Keen Kestrel</span></span>
+                </a>
+              </div>
+            </li>
+
+            <li class="card app app-wren reveal d3">
+              <div class="app-head">
+                <img class="app-icon" src="assets/apps/wise-wren.svg" width="56" height="56" alt="" />
+                <span class="pill status-warning"><span class="dot"></span>In design</span>
+              </div>
+              <h3 class="app-name">Wise Wren</h3>
+              <p class="app-kind">Container updates</p>
+              <p class="app-pitch">
+                Keeps your Docker containers up to date without surprises: it updates only what you
+                approve, with a snapshot first, a health check after and a rollback if it fails.
+                Nothing to install yet; follow along on GitHub.
+              </p>
+              <p class="app-runs"><span class="app-runs-label">Will run on</span> Unraid first · any Docker host planned</p>
+              <div class="app-links">
+                <a class="btn btn-sm" href="https://hedgerow.tools/Wise-Wren/">Website<span class="vh"> of Wise Wren</span></a>
+                <a class="btn btn-ghost btn-sm" href="https://github.com/Ferdinand99/Wise-Wren">
+                  <svg class="gh-mark" aria-hidden="true"><use href="#gh"></use></svg>
+                  <span>GitHub<span class="vh">: Wise Wren</span></span>
                 </a>
               </div>
             </li>
@@ -326,7 +349,8 @@
           </div>
           <p class="diagram-note reveal">
             Nimble Newt is a desktop app, so it shares the design and the principles rather than the
-            server foundation.
+            server foundation. Wise Wren, still in design, will build on vole-kit too, and open
+            maintenance windows in Vigilant Vole while it updates your containers.
           </p>
         </div>
       </section>
@@ -402,6 +426,7 @@
             <li><a href="https://hedgerow.tools/Vigilant-Vole/">Vigilant Vole</a></li>
             <li><a href="https://hedgerow.tools/Nimble-Newt/">Nimble Newt</a></li>
             <li><a href="https://hedgerow.tools/Keen-Kestrel/">Keen Kestrel</a></li>
+            <li><a href="https://hedgerow.tools/Wise-Wren/">Wise Wren</a></li>
             <li><a href="https://github.com/Ferdinand99">GitHub</a></li>
             <li><a href="https://github.com/Ferdinand99/Ferdinand99.github.io/blob/main/LICENSE">MIT license</a></li>
           </ul>
