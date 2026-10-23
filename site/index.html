@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'none'; script-src 'self' 'sha256-WZRJfWvsnNCPcxzZwvyhovnZGqhZaC+8gPGPRbx6wTk='; style-src 'self'; img-src 'self'; font-src 'self'; base-uri 'self'; form-action 'none'"
+      content="default-src 'none'; script-src 'self' 'sha256-WZRJfWvsnNCPcxzZwvyhovnZGqhZaC+8gPGPRbx6wTk=' https://kestrel.hedgerow.tools; style-src 'self'; img-src 'self'; font-src 'self'; connect-src https://kestrel.hedgerow.tools; base-uri 'self'; form-action 'none'"
     />
     <title>Hedgerow — small, self-hosted apps that live together</title>
     <meta
@@ -54,6 +54,7 @@
       }
     </script>
     <script src="app.js" defer></script>
+    <script defer src="https://kestrel.hedgerow.tools/js/k.js" data-key="90daafcccde19016b43c733b040b6863"></script>
   </head>
   <body>
     <svg width="0" height="0" class="vh" aria-hidden="true" focusable="false">
@@ -255,7 +256,7 @@
             <li class="card feature reveal d3">
               <span class="list-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#eye-off"></use></svg></span>
               <h3>Privacy first</h3>
-              <p>No ads and no trackers. Where an app counts visitors, it does so without cookies, and their sites make no requests to anyone else.</p>
+              <p>No ads and no third-party trackers. Where an app counts visitors, it does so without cookies, and these sites count theirs with our own Keen Kestrel.</p>
             </li>
             <li class="card feature reveal">
               <span class="list-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#sliders"></use></svg></span>
@@ -433,7 +434,8 @@
         </nav>
         <p>
           The Hedgerow apps and this site are open source under the MIT license. This site uses no
-          cookies or analytics and makes no requests to other sites.
+          cookies. Visits are counted with our own Keen Kestrel, which keeps no IP addresses or lasting
+          identifiers and respects Global Privacy Control.
         </p>
       </div>
     </footer>
