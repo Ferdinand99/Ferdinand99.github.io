@@ -80,6 +80,7 @@
           <a class="topnav-link" href="#apps">Apps</a>
           <a class="topnav-link" href="#principles">Principles</a>
           <a class="topnav-link" href="#together">Together</a>
+          <a class="topnav-link" href="#vole-kit">vole-kit</a>
           <a class="topnav-link" href="#also">Also by me</a>
           <a class="btn btn-ghost btn-sm" href="https://github.com/Ferdinand99" aria-label="Ferdinand99 on GitHub">
             <svg class="gh-mark" aria-hidden="true"><use href="#gh"></use></svg>
@@ -355,8 +356,69 @@
         </div>
       </section>
 
+      <!-- vole-kit ========================================================= -->
+      <section class="section section-alt" id="vole-kit" aria-labelledby="vole-kit-title">
+        <div class="wrap">
+          <header class="section-head reveal">
+            <p class="eyebrow">Under the hood</p>
+            <h2 class="headline" id="vole-kit-title"><span class="mono nw">vole-kit</span>, the shared foundation.</h2>
+            <p class="sub">
+              One Rust crate that Vigilant Vole, Keen Kestrel and Wise Wren are built on. Fix something
+              once, and every app gets it with its next release.
+            </p>
+          </header>
+
+          <ul class="grid grid-4">
+            <li class="card feature reveal">
+              <span class="list-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#key"></use></svg></span>
+              <h3>Sign-in, passkeys and 2FA</h3>
+              <p>Argon2 passwords, passkeys, TOTP with recovery codes, and sessions you can sign out everywhere.</p>
+            </li>
+            <li class="card feature reveal d1">
+              <span class="list-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#users"></use></svg></span>
+              <h3>Users, roles and API tokens</h3>
+              <p>Admin, editor and viewer roles, and expiring read or write API tokens with scopes.</p>
+            </li>
+            <li class="card feature reveal d2">
+              <span class="list-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#bell"></use></svg></span>
+              <h3>About 40 alert channels</h3>
+              <p>Discord, Slack, ntfy, email, webhooks and more, set up the same way in every app, with their secrets encrypted at rest.</p>
+            </li>
+            <li class="card feature reveal d3">
+              <span class="list-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#globe"></use></svg></span>
+              <h3>26 languages</h3>
+              <p>Every screen in 26 languages, right-to-left included, and a site language under Settings → General.</p>
+            </li>
+            <li class="card feature reveal">
+              <span class="list-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#shield-check"></use></svg></span>
+              <h3>Secure by default</h3>
+              <p>CSRF protection, a strict Content-Security-Policy, security headers and rate limits on sign-in.</p>
+            </li>
+            <li class="card feature reveal d1">
+              <span class="list-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#code"></use></svg></span>
+              <h3>API, OpenAPI and MCP</h3>
+              <p>A browsable REST API reference, an OpenAPI 3.1 document and MCP tools for coding assistants.</p>
+            </li>
+            <li class="card feature reveal d2">
+              <span class="list-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#archive"></use></svg></span>
+              <h3>SQLite with safe upgrades</h3>
+              <p>Migrations take a backup first, and an older version refuses a database it doesn’t understand.</p>
+            </li>
+            <li class="card feature reveal d3">
+              <span class="list-icon"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#sliders"></use></svg></span>
+              <h3>One design system</h3>
+              <p>The same components, icons and dark and light themes, so the next app already feels familiar.</p>
+            </li>
+          </ul>
+          <p class="diagram-note reveal">
+            How it’s put together, and how an app moves to a new version:
+            <a href="https://github.com/Ferdinand99/Vigilant-Vole/blob/main/docs/vole-kit.md">docs/vole-kit.md</a>.
+          </p>
+        </div>
+      </section>
+
       <!-- Also by me ======================================================= -->
-      <section class="section section-alt" id="also" aria-labelledby="also-title">
+      <section class="section" id="also" aria-labelledby="also-title">
         <div class="wrap">
           <header class="section-head reveal">
             <h2 class="headline" id="also-title">Also by me.</h2>
