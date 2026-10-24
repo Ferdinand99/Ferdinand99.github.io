@@ -187,10 +187,10 @@
               <p class="app-kind">Error tracking and analytics</p>
               <p class="app-pitch">
                 Self-hosted error tracking that works with the official Sentry SDKs, and analytics
-                for your apps and sites without cookies or stored IP addresses. Error tracking is out
-                as v0.1, a Docker image; analytics come in v0.2.
+                for your apps and sites without cookies or stored IP addresses. Out as an early release:
+                a Docker image, with an Unraid template.
               </p>
-              <p class="app-runs"><span class="app-runs-label">Runs on</span> Docker today · Unraid, Proxmox and Linux planned</p>
+              <p class="app-runs"><span class="app-runs-label">Runs on</span> Docker · Unraid · Proxmox and Linux planned</p>
               <div class="app-links">
                 <a class="btn btn-sm" href="https://hedgerow.tools/Keen-Kestrel/">Website<span class="vh"> of Keen Kestrel</span></a>
                 <a class="btn btn-ghost btn-sm" href="https://github.com/Ferdinand99/Keen-Kestrel">
@@ -210,7 +210,7 @@
               <p class="app-pitch">
                 Keeps your Docker containers up to date without surprises: it updates only what you
                 approve, with a snapshot first, a health check after and a rollback if it fails.
-                Out as v0.1, Docker images for the server and its agent.
+                Out as an early release: Docker images for the server and its agent, with Unraid templates.
               </p>
               <p class="app-runs"><span class="app-runs-label">Runs on</span> Docker today · tested on Unraid, other Linux best-effort</p>
               <div class="app-links">
@@ -304,37 +304,36 @@
               <p>
                 The same tokens, components, icons and typeface, written down once in Vigilant Vole’s
                 <a href="https://github.com/Ferdinand99/Vigilant-Vole/blob/main/docs/design-system.md">design system</a>.
-                Learn one app and the next feels familiar. Keen Kestrel’s interface will be built on it.
+                Learn one app and the next feels familiar. Keen Kestrel and Wise Wren are built on it.
               </p>
             </li>
-            <li class="card link-card is-now reveal d1">
+            <li class="card link-card reveal d1">
               <div class="link-head">
                 <span class="list-icon status-accent"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#box"></use></svg></span>
-                <span class="pill status-accent"><span class="dot is-live"></span>Being built now</span>
+                <span class="pill status-up"><span class="dot"></span>Today</span>
               </div>
               <h3 class="title">A shared foundation, <span class="mono nw">vole-kit</span></h3>
               <p>
-                Vigilant Vole and Keen Kestrel share one Rust crate, carved out of Vigilant Vole:
-                sign-in and two-factor, users and API tokens, settings, translations, the database
-                plumbing, security headers and the design system. Vigilant Vole works the same while
-                it moves.
+                Vigilant Vole, Keen Kestrel and Wise Wren share one Rust crate, carved out of Vigilant Vole:
+                sign-in with passwords, two-factor and passkeys, users and API tokens, settings,
+                translations, the database plumbing, security headers and the design system.
               </p>
             </li>
             <li class="card link-card reveal d2">
               <div class="link-head">
-                <span class="list-icon status-none"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#bell"></use></svg></span>
-                <span class="pill"><span class="dot"></span>Planned</span>
+                <span class="list-icon status-up"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#bell"></use></svg></span>
+                <span class="pill status-up"><span class="dot"></span>Today</span>
               </div>
               <h3 class="title">The same alert channels</h3>
               <p>
-                Keen Kestrel will send its alerts through the same notification providers as
+                Keen Kestrel and Wise Wren send their alerts through the same notification providers as
                 Vigilant Vole, about 40 of them, from Discord and Slack to ntfy, email and webhooks,
-                set up the same way in both.
+                set up the same way everywhere, with their secrets encrypted at rest.
               </p>
             </li>
           </ul>
 
-          <div class="diagram reveal" role="img" aria-label="Diagram: Vigilant Vole and Keen Kestrel both build on vole-kit, which is being built now. Nimble Newt shares the design system and the principles.">
+          <div class="diagram reveal" role="img" aria-label="Diagram: Vigilant Vole and Keen Kestrel build on vole-kit, a shared Rust crate; Wise Wren does too. Nimble Newt shares the design system and the principles.">
             <div class="node node-vole">
               <img src="assets/apps/vigilant-vole.svg" width="32" height="32" alt="" />
               <span>Vigilant Vole</span>
