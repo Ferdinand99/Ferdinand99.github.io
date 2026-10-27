@@ -10,7 +10,7 @@
     <title>Hedgerow — small, self-hosted apps that live together</title>
     <meta
       name="description"
-      content="Hedgerow is a family of self-hosted apps and native tools: Vigilant Vole for uptime monitoring, Nimble Newt for editing text, Keen Kestrel for error tracking and analytics, and Wise Wren for container updates, with Faithful Ferret, a password manager, coming soon. Rust, SQLite, privacy first, with each project's license documented separately."
+      content="Hedgerow is a family of self-hosted apps and native tools: Vigilant Vole for uptime monitoring, Nimble Newt for editing text, Keen Kestrel for error tracking and analytics, and Wise Wren for container updates. Faithful Ferret, a password manager, the Hedgerow phone app and the Postal Pigeon push relay are in development. Rust, SQLite, privacy first, with each project's license documented separately."
     />
     <script>document.documentElement.classList.add("js");</script>
     <link rel="canonical" href="https://hedgerow.tools/" />
@@ -26,7 +26,7 @@
     <meta property="og:title" content="Hedgerow — small, self-hosted apps that live together" />
     <meta
       property="og:description"
-      content="Vigilant Vole, Nimble Newt, Keen Kestrel and Wise Wren, with Faithful Ferret coming soon: small apps for your own machines, built in Rust, with no trackers."
+      content="Vigilant Vole, Nimble Newt, Keen Kestrel and Wise Wren, with Faithful Ferret, a Hedgerow phone app and a push relay in development: small apps for your own machines, with no trackers."
     />
     <meta property="og:image" content="https://hedgerow.tools/og-image.png" />
     <meta property="og:image:type" content="image/png" />
@@ -37,7 +37,7 @@
     <meta name="twitter:title" content="Hedgerow — small, self-hosted apps that live together" />
     <meta
       name="twitter:description"
-      content="Vigilant Vole, Nimble Newt, Keen Kestrel and Wise Wren, with Faithful Ferret coming soon: small apps for your own machines, built in Rust, with no trackers."
+      content="Vigilant Vole, Nimble Newt, Keen Kestrel and Wise Wren, with Faithful Ferret, a Hedgerow phone app and a push relay in development: small apps for your own machines, with no trackers."
     />
     <meta name="twitter:image" content="https://hedgerow.tools/og-image.png" />
     <link rel="preload" href="fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin />
@@ -48,7 +48,7 @@
         "@type": "WebSite",
         "name": "Hedgerow",
         "url": "https://hedgerow.tools/",
-        "description": "A small family of self-hosted services and native tools: Vigilant Vole, Nimble Newt, Keen Kestrel and Wise Wren, with the password manager Faithful Ferret coming soon.",
+        "description": "A small family of self-hosted services and native tools: Vigilant Vole, Nimble Newt, Keen Kestrel and Wise Wren, with the password manager Faithful Ferret, the Hedgerow phone app and the Postal Pigeon push relay in development.",
         "image": "https://hedgerow.tools/og-image.png",
         "author": { "@type": "Person", "name": "Ferdinand99", "url": "https://github.com/Ferdinand99" }
       }
@@ -104,9 +104,9 @@
             </h1>
             <p class="lead">
               A small family of apps you run on your own machines: self-hosted services for your
-              server and fast native tools for your desktop. Each is named after an animal of the
-              hedge, and they share one design, the same principles and, more and more, the same
-              foundation.
+              server and fast native tools for your desktop, with an app for your phone on its way.
+              Each is named after an animal of the hedge, and they share one design, the same
+              principles and, more and more, the same foundation.
             </p>
             <div class="hero-actions">
               <a class="btn btn-primary btn-lg" href="#apps">Meet the family</a>
@@ -243,6 +243,61 @@
                 <a class="btn btn-ghost btn-sm" href="https://github.com/Ferdinand99/Faithful-Ferret">
                   <svg class="gh-mark" aria-hidden="true"><use href="#gh"></use></svg>
                   <span>GitHub<span class="vh">: Faithful Ferret</span></span>
+                </a>
+              </div>
+            </li>
+          </ul>
+
+          <div class="apps-sub reveal">
+            <p class="apps-sub-title">On your phone, and behind the scenes.</p>
+            <p>
+              Both are in development. One app brings your servers together on a phone; a small
+              relay lets them reach you with a push notification.
+            </p>
+          </div>
+
+          <ul class="apps">
+            <li class="card app app-hedgerow reveal">
+              <div class="app-head">
+                <img class="app-icon" src="favicon.svg" width="56" height="56" alt="" />
+                <span class="pill pill-soon"><span class="dot"></span>In development</span>
+              </div>
+              <h3 class="app-name">Hedgerow app</h3>
+              <p class="app-kind">One app for your Hedgerow servers</p>
+              <p class="app-pitch">
+                A native app for iPhone, iPad and Android that brings Vigilant Vole, Keen Kestrel
+                and Wise Wren together: an overview, your monitors, issues and updates, and quick
+                actions. It talks only to your own servers, with an API token. Not ready to use yet.
+              </p>
+              <p class="app-runs"><span class="app-runs-label">Runs on</span> iOS · iPadOS · Android (APK from GitHub Releases)</p>
+              <div class="app-links">
+                <a class="btn btn-sm" href="https://hedgerow.tools/Hedgerow-App/">Website<span class="vh"> of the Hedgerow app</span></a>
+                <a class="btn btn-ghost btn-sm" href="https://github.com/Ferdinand99/Hedgerow-App">
+                  <svg class="gh-mark" aria-hidden="true"><use href="#gh"></use></svg>
+                  <span>GitHub<span class="vh">: Hedgerow app</span></span>
+                </a>
+              </div>
+            </li>
+
+            <li class="card app app-pigeon reveal d1">
+              <div class="app-head">
+                <img class="app-icon" src="assets/apps/postal-pigeon.png" width="56" height="56" alt="" decoding="async" />
+                <span class="pill pill-soon"><span class="dot"></span>In development</span>
+              </div>
+              <h3 class="app-name">Postal Pigeon</h3>
+              <p class="app-kind">Push relay</p>
+              <p class="app-pitch">
+                The Hedgerow push relay: it lets your self-hosted servers send content-free push
+                notifications to the iOS apps. The notification only says there is something new,
+                and the app fetches the details from your own server. Android doesn’t need it,
+                because it uses UnifiedPush.
+              </p>
+              <p class="app-runs"><span class="app-runs-label">For</span> the Hedgerow app and Faithful Ferret on iOS</p>
+              <div class="app-links">
+                <a class="btn btn-sm" href="https://hedgerow.tools/Postal-Pigeon/">Website<span class="vh"> of Postal Pigeon</span></a>
+                <a class="btn btn-ghost btn-sm" href="https://github.com/Ferdinand99/Postal-Pigeon">
+                  <svg class="gh-mark" aria-hidden="true"><use href="#gh"></use></svg>
+                  <span>GitHub<span class="vh">: Postal Pigeon</span></span>
                 </a>
               </div>
             </li>
@@ -514,6 +569,8 @@
             <li><a href="https://hedgerow.tools/Keen-Kestrel/">Keen Kestrel</a></li>
             <li><a href="https://hedgerow.tools/Wise-Wren/">Wise Wren</a></li>
             <li><a href="https://hedgerow.tools/Faithful-Ferret/">Faithful Ferret</a></li>
+            <li><a href="https://hedgerow.tools/Hedgerow-App/">Hedgerow app</a></li>
+            <li><a href="https://hedgerow.tools/Postal-Pigeon/">Postal Pigeon</a></li>
             <li><a href="https://status.hedgerow.tools/">Status</a></li>
             <li><a href="https://github.com/Ferdinand99">GitHub</a></li>
             <li><a href="https://github.com/Ferdinand99/Ferdinand99.github.io/blob/main/LICENSE">Website license (MIT)</a></li>
