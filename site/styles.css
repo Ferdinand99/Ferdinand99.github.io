@@ -146,6 +146,10 @@
   --app: #ff6482;
   --app-text: light-dark(#b3123a, #ff6482);
 }
+.app-ferret {
+  --app: #59d9c7;
+  --app-text: light-dark(#0a6b5e, #59d9c7);
+}
 
 /* Status mapping — one class sets the trio every status-aware component reads. */
 .status-up {
@@ -714,8 +718,8 @@ code.nw {
   color: var(--faint);
 }
 
-/* The family: one card per app, glowing in the app's colour. Four apps sit
-   two by two. */
+/* The family: one card per app, glowing in the app's colour. The released
+   apps sit two by two; an app that is only announced spans the full width. */
 .apps {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -741,6 +745,24 @@ code.nw {
   z-index: -1;
   background: radial-gradient(closest-side, color-mix(in srgb, var(--app) 20%, transparent), transparent);
   pointer-events: none;
+}
+/* An announced app: dashed outline, a dimmer glow and icon, and a badge in the
+   app's own colour, so it reads as not released yet. */
+.app-ferret {
+  grid-column: 1 / -1;
+  border-style: dashed;
+  border-color: color-mix(in srgb, var(--app) 45%, var(--line));
+}
+.app-ferret::before {
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--app) 12%, transparent), transparent);
+}
+.app-ferret .app-icon {
+  opacity: 0.85;
+}
+.pill-soon {
+  --status: var(--app-text);
+  --status-text: var(--app-text);
+  --status-fill: color-mix(in srgb, var(--app) 18%, transparent);
 }
 .app-head {
   display: flex;
