@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; script-src 'self' https://kestrel.hedgerow.tools; style-src 'self'; img-src 'self'; font-src 'self'; connect-src https://kestrel.hedgerow.tools; base-uri 'self'; form-action 'none'"
+    />
+    <title>Privacy · Hedgerow</title>
+    <meta
+      name="description"
+      content="What the Hedgerow app, the Postal Pigeon push relay and hedgerow.tools collect, store and share: in plain words, from what the code does."
+    />
+    <!-- The page lives at /privacy/: every URL below resolves against the site root. -->
+    <base href="/" />
+    <link rel="canonical" href="https://hedgerow.tools/privacy/" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="favicon.png" type="image/png" sizes="48x48" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#0b0b0d" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)" />
+    <link rel="preload" href="fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="https://kestrel.hedgerow.tools/js/k.js" data-key="90daafcccde19016b43c733b040b6863"></script>
+  </head>
+  <body>
+    <a class="skip" href="privacy/#main">Skip to content</a>
+
+    <header class="topbar is-scrolled">
+      <div class="wrap topbar-inner">
+        <a class="brand" href="./">
+          <img src="favicon.svg" alt="" width="28" height="28" />
+          <span>Hedgerow</span>
+        </a>
+      </div>
+    </header>
+
+    <main id="main" class="wrap legal">
+      <header class="legal-head">
+        <p class="pill status-accent"><span class="dot"></span>Privacy</p>
+        <h1 class="headline">Privacy</h1>
+        <p class="lead">
+          What the Hedgerow app, the Postal Pigeon push relay and this website collect, keep and share. It is written
+          from what the code does, and the code is open, so you can check it.
+        </p>
+        <p class="legal-meta">Last updated 28 October 2026</p>
+      </header>
+
+      <section class="legal-summary" aria-labelledby="short">
+        <h2 id="short">The short version</h2>
+        <ul>
+          <li>There is <strong>no Hedgerow account</strong>. We don't know your name or e-mail address.</li>
+          <li>
+            The app talks to <strong>the servers you add</strong> (Vigilant Vole, Keen Kestrel, Wise Wren) and to
+            nothing else, except Postal Pigeon when you turn notifications on.
+          </li>
+          <li>The servers are <strong>yours</strong>. What is on them never reaches us.</li>
+          <li>
+            Notifications carry <strong>no content</strong>. Your phone fetches the text from your own server, so neither
+            the relay nor Apple sees what happened.
+          </li>
+          <li>No analytics, advertising or tracking SDKs in the app. We don't sell or share data.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="app">
+        <h2 id="app">The Hedgerow app</h2>
+        <h3>What it stores on your phone</h3>
+        <ul>
+          <li>
+            <strong>Your connections:</strong> the name, address and kind of each server you add, in the app's own
+            storage.
+          </li>
+          <li>
+            <strong>API tokens</strong> for those servers, in the iOS Keychain, for this device only. They are not synced
+            to iCloud and not included in backups. They can be read after the phone has been unlocked once since it
+            started, so the notification extension can fetch a notification's text while the phone is locked. They are
+            sent only to the server they belong to.
+          </li>
+          <li>
+            <strong>Small settings:</strong> which connection is selected per service, whether notifications are on, and
+            the bookkeeping for notifications described below.
+          </li>
+        </ul>
+        <h3>Where it connects</h3>
+        <p>
+          To the addresses you added, over HTTPS (plain HTTP only for addresses on your own network). It does not follow
+          a redirect to another host. With notifications on, it also connects to Postal Pigeon (below). There are no other
+          connections: no analytics, crash reporting or advertising services.
+        </p>
+        <h3>Notifications</h3>
+        <p>
+          Notifications are off until you turn them on in the app, and a server sends none until its administrator adds
+          the "Hedgerow app" channel. When you turn them on:
+        </p>
+        <ol>
+          <li>iOS gives the app a device token (an address in Apple's push system). The app registers it with Postal Pigeon.</li>
+          <li>
+            For each connection, the app asks the relay for an opaque <em>handle</em> and gives that handle to that one
+            server. The server keeps it encrypted, tied to your user and the token you used.
+          </li>
+          <li>
+            When something happens, the server stores the text of the alert for 24 hours under a random reference and
+            asks the relay to push "something happened" with that reference.
+          </li>
+          <li>
+            On your phone, the notification extension looks up which connection the push is for, fetches the text from
+            that server with your token, and shows it. If it can't, you see the generic "Something needs your attention".
+          </li>
+        </ol>
+        <p>
+          The app never opens a link, follows an address or runs a command from a push. Turning notifications off for a
+          connection, removing a connection or turning notifications off entirely deletes the handles at the relay and at
+          your servers.
+        </p>
+      </section>
+
+      <section aria-labelledby="pigeon">
+        <h2 id="pigeon">Postal Pigeon, the push relay</h2>
+        <p>
+          Apple only lets the holder of the app's push key send notifications to it, so self-hosted servers can't reach
+          your phone directly. Postal Pigeon is the small relay that does it for them. It runs at
+          <code>pigeon.hedgerow.tools</code>, operated by the Hedgerow project.
+        </p>
+        <h3>What it stores</h3>
+        <ul>
+          <li>
+            Your <strong>device token</strong>, encrypted, with the app and whether it is a test or store build, when it was
+            registered and the date it was last seen.
+          </li>
+          <li>For each handle: a hash of it, a random tag your app chose, when it was made and the date it was last used.</li>
+          <li>
+            For each server: a random id, its product and version as it reports them, the date it was last used, and for
+            30 days the first part of the address it registered from (a /24 or /48 network), for abuse limits.
+          </li>
+          <li>Daily counts of pushes per server, for 30 days. No device or handle appears in them.</li>
+        </ul>
+        <p>
+          <strong>Never stored:</strong> any notification content (there is none), the reference a push carries, your
+          server's name or address, your API tokens, or which server a device or handle belongs to.
+        </p>
+        <h3>What it can see while working</h3>
+        <ul>
+          <li>The internet address of your phone when the app registers, and of your server when it sends a push.</li>
+          <li>
+            At the moment a push is sent, which server asked for which handle. The relay doesn't store or log that pair,
+            but a modified relay could. That is the honest limit of "the relay doesn't know which server you use".
+          </li>
+          <li>How many handles your device has (roughly how many servers you connected), but not which.</li>
+        </ul>
+        <p>
+          The relay's logs hold no tokens, handles, references or addresses. The reverse proxy in front of it keeps
+          ordinary access logs (time, address, path) for at most seven days.
+        </p>
+        <h3>How long</h3>
+        <p>
+          A device is deleted when the app turns notifications off, when Apple says the token is no longer valid, or
+          after 90 days without contact. A handle goes when it is revoked or its device is deleted. A server's
+          registration is deleted after 180 days without use.
+        </p>
+        <h3>What Apple sees</h3>
+        <p>
+          The device token, the app, the time and a tiny payload: a type, the random tag and the random reference.
+          Apple's privacy policy applies to that.
+        </p>
+        <p>
+          The relay's code and design are public:
+          <a href="https://github.com/Ferdinand99/Postal-Pigeon">github.com/Ferdinand99/Postal-Pigeon</a>. If you'd rather
+          not use it, the app and the servers work without notifications, and you can run your own relay with your own
+          app build.
+        </p>
+      </section>
+
+      <section aria-labelledby="servers">
+        <h2 id="servers">Your servers</h2>
+        <p>
+          Vigilant Vole, Keen Kestrel and Wise Wren run on machines you or your organisation control, and you are
+          responsible for the data on them. The Hedgerow project has no access to them. The only thing they send to us is
+          a push request with a handle and a random reference, and only when a "Hedgerow app" channel is set up.
+        </p>
+      </section>
+
+      <section aria-labelledby="testflight">
+        <h2 id="testflight">TestFlight and the App Store</h2>
+        <p>
+          When you install the app through TestFlight or the App Store, Apple may share crash reports, usage statistics
+          and feedback with us if you agreed to that on your device or in TestFlight. We only use them to fix the app.
+        </p>
+      </section>
+
+      <section aria-labelledby="website">
+        <h2 id="website">This website</h2>
+        <p>
+          hedgerow.tools is hosted on GitHub Pages and sets no cookies. Visits are counted with our own Keen Kestrel,
+          which keeps no IP addresses or lasting identifiers and respects Global Privacy Control. GitHub, as the host,
+          may log requests under its own privacy statement.
+        </p>
+      </section>
+
+      <section aria-labelledby="rights">
+        <h2 id="rights">Your choices and rights</h2>
+        <p>
+          You can turn notifications off in the app at any time, which deletes your device at the relay. Deleting the app
+          removes everything it stored on your phone. Because there is no account, we can't look you up by name or
+          e-mail; if you want something about your device deleted or explained, contact us and we'll help with what the
+          relay holds. You can also complain to the Norwegian Data Protection Authority (Datatilsynet).
+        </p>
+        <p>The app is not directed at children.</p>
+      </section>
+
+      <section aria-labelledby="contact">
+        <h2 id="contact">Contact and changes</h2>
+        <p>
+          The Hedgerow project is run by Ferdinand99 in Norway. Questions go to
+          <a href="https://github.com/Ferdinand99/Hedgerow-App/issues">the Hedgerow app's issue tracker</a>. Security
+          problems go through a private report on the repository's Security tab.
+        </p>
+        <p>
+          When this page changes, the date at the top changes too, and the full history is in
+          <a href="https://github.com/Ferdinand99/Ferdinand99.github.io/commits/main/site/privacy/index.html">the website's repository</a>.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap">
+        <div class="footer-top">
+          <a class="brand" href="./">
+            <img src="favicon.svg" alt="" width="24" height="24" loading="lazy" />
+            <span>Hedgerow</span>
+          </a>
+          <span>Made in Norway</span>
+        </div>
+        <nav aria-label="Family links">
+          <ul class="footer-links">
+            <li><a href="https://hedgerow.tools/Hedgerow-App/">Hedgerow app</a></li>
+            <li><a href="https://hedgerow.tools/Postal-Pigeon/">Postal Pigeon</a></li>
+            <li><a href="./">All apps</a></li>
+            <li><a href="https://github.com/Ferdinand99">GitHub</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

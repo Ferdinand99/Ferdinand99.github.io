@@ -4,4 +4,8 @@
     <loc>https://hedgerow.tools/</loc>
     <changefreq>monthly</changefreq>
   </url>
+  <url>
+    <loc>https://hedgerow.tools/privacy/</loc>
+    <changefreq>yearly</changefreq>
+  </url>
 </urlset>
