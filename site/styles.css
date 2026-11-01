@@ -158,6 +158,10 @@
   --app: #7fb8ff;
   --app-text: light-dark(#1a5fb4, #7fb8ff);
 }
+.app-partridge {
+  --app: #e9a15b;
+  --app-text: light-dark(#8a4a06, #e9a15b);
+}
 
 /* Status mapping — one class sets the trio every status-aware component reads. */
 .status-up {
@@ -749,7 +753,7 @@ code.nw {
 }
 
 /* The family: one card per app, glowing in the app's colour. The released
-   apps sit two by two; an app that is only announced spans the full width. */
+   apps sit two by two; some wide cards span the full width. */
 .apps {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -778,21 +782,23 @@ code.nw {
 }
 /* An announced app: dashed outline, a dimmer glow and icon, and a badge in the
    app's own colour, so it reads as not released yet. */
-.app-ferret,
 .app-hedgerow,
 .app-pigeon {
   grid-column: 1 / -1;
 }
 .app-ferret,
+.app-partridge,
 .app-hedgerow {
   border-style: dashed;
   border-color: color-mix(in srgb, var(--app) 45%, var(--line));
 }
 .app-ferret::before,
+.app-partridge::before,
 .app-hedgerow::before {
   background: radial-gradient(closest-side, color-mix(in srgb, var(--app) 12%, transparent), transparent);
 }
 .app-ferret .app-icon,
+.app-partridge .app-icon,
 .app-hedgerow .app-icon {
   opacity: 0.85;
 }
