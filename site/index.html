@@ -10,7 +10,7 @@
     <title>Hedgerow — small, self-hosted apps that live together</title>
     <meta
       name="description"
-      content="Hedgerow is a family of self-hosted apps and native tools: Vigilant Vole for uptime monitoring, Nimble Newt for editing text, Keen Kestrel for error tracking and analytics, and Wise Wren for container updates. Faithful Ferret, a password manager, the Hedgerow phone app and the Postal Pigeon push relay are in development. Rust, SQLite, privacy first, with each project's license documented separately."
+      content="Hedgerow is a family of self-hosted apps and native tools: Vigilant Vole for uptime monitoring, Nimble Newt for editing text, Keen Kestrel for error tracking and analytics, Wise Wren for container updates, and the Postal Pigeon push relay. Faithful Ferret, a password manager, and the Hedgerow phone app are in development. Rust, SQLite, privacy first, with each project's license documented separately."
     />
     <script>document.documentElement.classList.add("js");</script>
     <link rel="canonical" href="https://hedgerow.tools/" />
@@ -26,7 +26,7 @@
     <meta property="og:title" content="Hedgerow — small, self-hosted apps that live together" />
     <meta
       property="og:description"
-      content="Vigilant Vole, Nimble Newt, Keen Kestrel and Wise Wren, with Faithful Ferret, a Hedgerow phone app and a push relay in development: small apps for your own machines, with no trackers."
+      content="Vigilant Vole, Nimble Newt, Keen Kestrel, Wise Wren and the Postal Pigeon push relay, with Faithful Ferret and a Hedgerow phone app in development: small apps for your own machines, with no trackers."
     />
     <meta property="og:image" content="https://hedgerow.tools/og-image.png" />
     <meta property="og:image:type" content="image/png" />
@@ -37,7 +37,7 @@
     <meta name="twitter:title" content="Hedgerow — small, self-hosted apps that live together" />
     <meta
       name="twitter:description"
-      content="Vigilant Vole, Nimble Newt, Keen Kestrel and Wise Wren, with Faithful Ferret, a Hedgerow phone app and a push relay in development: small apps for your own machines, with no trackers."
+      content="Vigilant Vole, Nimble Newt, Keen Kestrel, Wise Wren and the Postal Pigeon push relay, with Faithful Ferret and a Hedgerow phone app in development: small apps for your own machines, with no trackers."
     />
     <meta name="twitter:image" content="https://hedgerow.tools/og-image.png" />
     <link rel="preload" href="fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin />
@@ -48,7 +48,7 @@
         "@type": "WebSite",
         "name": "Hedgerow",
         "url": "https://hedgerow.tools/",
-        "description": "A small family of self-hosted services and native tools: Vigilant Vole, Nimble Newt, Keen Kestrel and Wise Wren, with the password manager Faithful Ferret, the Hedgerow phone app and the Postal Pigeon push relay in development.",
+        "description": "A small family of self-hosted services and native tools: Vigilant Vole, Nimble Newt, Keen Kestrel, Wise Wren and the Postal Pigeon push relay, with the password manager Faithful Ferret and the Hedgerow phone app in development.",
         "image": "https://hedgerow.tools/og-image.png",
         "author": { "@type": "Person", "name": "Ferdinand99", "url": "https://github.com/Ferdinand99" }
       }
@@ -125,7 +125,7 @@
         <div class="wrap">
           <header class="section-head center reveal">
             <p class="eyebrow">The family</p>
-            <h2 class="headline" id="apps-title">Four animals, and two more on their way.</h2>
+            <h2 class="headline" id="apps-title">Five animals, and one more on its way.</h2>
             <p class="sub">
               A hedgerow is a living fence of shrubs and trees, and home to a crowd of animals. The
               vole lives at its foot, the kestrel hunts along it, the newt hides in its damp corners
@@ -224,18 +224,42 @@
               </div>
             </li>
 
+            <li class="card app app-pigeon reveal">
+              <div class="app-head">
+                <img class="app-icon" src="assets/apps/postal-pigeon.png" width="56" height="56" alt="" decoding="async" />
+                <span class="pill status-up"><span class="dot"></span>Live</span>
+              </div>
+              <h3 class="app-name">Postal Pigeon</h3>
+              <p class="app-kind">Push relay</p>
+              <p class="app-pitch">
+                The Hedgerow push relay: it lets your self-hosted servers send content-free push
+                notifications to the iOS apps. The notification only says there is something new,
+                and the app fetches the details from your own server. Android doesn’t need it,
+                because it uses UnifiedPush.
+              </p>
+              <p class="app-runs"><span class="app-runs-label">For</span> the Hedgerow app and Faithful Ferret on iOS</p>
+              <div class="app-links">
+                <a class="btn btn-sm" href="https://hedgerow.tools/Postal-Pigeon/">Website<span class="vh"> of Postal Pigeon</span></a>
+                <a class="btn btn-ghost btn-sm" href="https://github.com/Ferdinand99/Postal-Pigeon">
+                  <svg class="gh-mark" aria-hidden="true"><use href="#gh"></use></svg>
+                  <span>GitHub<span class="vh">: Postal Pigeon</span></span>
+                </a>
+              </div>
+            </li>
+
             <li class="card app app-ferret reveal">
               <div class="app-head">
                 <img class="app-icon" src="assets/apps/faithful-ferret.svg" width="56" height="56" alt="" />
-                <span class="pill pill-soon"><span class="dot"></span>Coming soon</span>
+                <span class="pill pill-soon"><span class="dot"></span>In development</span>
               </div>
               <h3 class="app-name">Faithful Ferret</h3>
               <p class="app-kind">Password manager</p>
               <p class="app-pitch">
                 A self-hosted, zero-knowledge password manager: your vault is encrypted on your own
                 devices and the server only stores ciphertext. Planned with passkeys, one-time codes,
-                a full web vault, browser extensions and iOS and Android apps. In the design phase,
-                so not ready to use yet.
+                a full web vault, browser extensions and iOS and Android apps. In development: the
+                server and web vault work end to end in testing. Not ready for real passwords yet, and
+                there has been no external security audit.
               </p>
               <p class="app-runs"><span class="app-runs-label">Runs on</span> Docker · Unraid (planned)</p>
               <div class="app-links">
@@ -249,10 +273,9 @@
           </ul>
 
           <div class="apps-sub reveal">
-            <p class="apps-sub-title">On your phone, and behind the scenes.</p>
+            <p class="apps-sub-title">On your phone.</p>
             <p>
-              Both are in development. One app brings your servers together on a phone; a small
-              relay lets them reach you with a push notification.
+              The Hedgerow app is in development. It brings your servers together on a phone.
             </p>
           </div>
 
@@ -275,29 +298,6 @@
                 <a class="btn btn-ghost btn-sm" href="https://github.com/Ferdinand99/Hedgerow-App">
                   <svg class="gh-mark" aria-hidden="true"><use href="#gh"></use></svg>
                   <span>GitHub<span class="vh">: Hedgerow app</span></span>
-                </a>
-              </div>
-            </li>
-
-            <li class="card app app-pigeon reveal d1">
-              <div class="app-head">
-                <img class="app-icon" src="assets/apps/postal-pigeon.png" width="56" height="56" alt="" decoding="async" />
-                <span class="pill pill-soon"><span class="dot"></span>In development</span>
-              </div>
-              <h3 class="app-name">Postal Pigeon</h3>
-              <p class="app-kind">Push relay</p>
-              <p class="app-pitch">
-                The Hedgerow push relay: it lets your self-hosted servers send content-free push
-                notifications to the iOS apps. The notification only says there is something new,
-                and the app fetches the details from your own server. Android doesn’t need it,
-                because it uses UnifiedPush.
-              </p>
-              <p class="app-runs"><span class="app-runs-label">For</span> the Hedgerow app and Faithful Ferret on iOS</p>
-              <div class="app-links">
-                <a class="btn btn-sm" href="https://hedgerow.tools/Postal-Pigeon/">Website<span class="vh"> of Postal Pigeon</span></a>
-                <a class="btn btn-ghost btn-sm" href="https://github.com/Ferdinand99/Postal-Pigeon">
-                  <svg class="gh-mark" aria-hidden="true"><use href="#gh"></use></svg>
-                  <span>GitHub<span class="vh">: Postal Pigeon</span></span>
                 </a>
               </div>
             </li>
