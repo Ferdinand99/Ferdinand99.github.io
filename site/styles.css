@@ -778,23 +778,22 @@ code.nw {
 }
 /* An announced app: dashed outline, a dimmer glow and icon, and a badge in the
    app's own colour, so it reads as not released yet. */
-.app-ferret {
-  grid-column: 1 / -1;
-}
 .app-ferret,
 .app-hedgerow,
 .app-pigeon {
+  grid-column: 1 / -1;
+}
+.app-ferret,
+.app-hedgerow {
   border-style: dashed;
   border-color: color-mix(in srgb, var(--app) 45%, var(--line));
 }
 .app-ferret::before,
-.app-hedgerow::before,
-.app-pigeon::before {
+.app-hedgerow::before {
   background: radial-gradient(closest-side, color-mix(in srgb, var(--app) 12%, transparent), transparent);
 }
 .app-ferret .app-icon,
-.app-hedgerow .app-icon,
-.app-pigeon .app-icon {
+.app-hedgerow .app-icon {
   opacity: 0.85;
 }
 .pill-soon {
