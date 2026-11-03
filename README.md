@@ -36,6 +36,10 @@ python -m http.server -d site 8000
 
 Then open <http://localhost:8000/>.
 
+## Support
+
+Hedgerow is built in spare time and is free to use. If you find it useful, you can support it through [GitHub Sponsors](https://github.com/sponsors/Ferdinand99) or [Ko-fi](https://ko-fi.com/ferdinand99). Thank you.
+
 ## License
 
 The website source code in this repository is licensed under the [MIT License](LICENSE). This license applies to the website code in this repository, not automatically to the separate Hedgerow app repositories.
